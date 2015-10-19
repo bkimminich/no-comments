@@ -1,525 +1,595 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
-
-		<title>No Comment!</title>
-
-		<meta name="description" content="No Comment!">
-		<meta name="author" content="Bjoern Kimminich">
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/white.css" id="theme">
-
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<div class="slides">
-				<section>
-					<h1>// No Comment!</h1>
-					<code><small>/* about the worthlessness of comments in clean code */</small></code>
-					<p>
-						<small>Created by <a href="http://kimminich.de">Björn Kimminich</a> / <a href="http://twitter.com/bkimminich">@bkimminich</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Uncle Bob dislikes comments</h2>
-					<blockquote cite="Clean Code, Robert C. Martin">
-						"Comments are, at best, a necessary evil."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Students like comments</h2>
-					<table><tbody>
-						<tr class="fragment"><td>Professors promote comments as documentation.</td></tr>
-						<tr class="fragment"><td>Professors often like extensive documentation.</td></tr>
-						<tr class="fragment"><td>Extensive documentation leads to better grades.</td></tr>
-						<tr class="fragment"><td>Students love to get better grades for mindless work.</td></tr>
-						<tr class="fragment"><td><strong>q.e.d.</strong></td></tr>
-					</tbody></table>
-				</section>
-
-				<section>
-					<h2><a href="https://www.openhub.net">OpenHub</a> also likes comments</h2>
-					<blockquote cite="https://www.openhub.net/p/juice-shop/factoids#FactoidCommentsAverage">
-						"A high number of comments might indicate that the code is well-documented and organized, and could be a sign of a helpful and disciplined development team."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>I'm in the <a href="https://www.openhub.net">OpenHub</a> worst 10%?</h2>
-						<blockquote cite="https://www.openhub.net/p/kata-tcg/factoids#FactoidCommentsVeryLow">
-						"Across all Java projects on Open Hub, 31% all source code lines are comments. For <a href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a>, this figure is 1%.
-						This lack of comments puts <a href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a> among the lowest 10% of all Java projects on Open Hub."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2><a href="https://sonarqube.org">SonarQube</a> got it right!</h2>
-					<blockquote cite="http://docs.sonarqube.org/display/HOME/Not+Enough+or+Too+Many+Comments">
-						"If the source code needs too many comments, it either means that it does not respect coding standards (naming conventions, design, etc.) or it is too complex."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>This is in line with Uncle Bob</h2>
-					<blockquote cite="Clean Code, Robert C. Martin">
-						"The proper use of comments is to compensate our failure to express ourself in code."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2><a href="https://www.openhub.net">SonarQube</a> goes even further</h2>
-					<blockquote cite="http://docs.sonarqube.org/display/HOME/Not+Enough+or+Too+Many+Comments">
-						"Time consuming maintenance [...] may lead to comments that are no longer up to date. Then comments go against their primary goal: they mislead the developer who will spend more time understanding the source code."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Again in line with Uncle Bob</h2>
-					<blockquote cite="Clean Code, Robert C. Martin">
-						"Inaccurate comments are far worse than no comments at all."
-					</blockquote>
-				</section>
-
-				<section>
-					<h2><a href="https://twitter.com/geekandpoke">Geek & Poke</a> sums it up</h2>
-					<img data-src="assets/6a00d8341d3df553ef0163007a80ae970d.jpg">
-				</section>
-
-				<section>
-					<h2>Bad Comments</h2>
-					<table><tbody>
-						<tr>
-							<td>
-								<ul>
-									<li>Mumbling</li>
-									<li>Redundant Comments</li>
-									<li>Misleading Comments</li>
-									<li>Mandated Comments</li>
-									<li>Journal Comments</li>
-									<li>Noise Comments</li>
-									<li>Scary Noise</li>
-									<li>Position Markers</li>
-								</ul>
-						</td>
-						<td>
-							<ul>
-								<li>Closing Brace Comments</li>
-								<li>Attributions and Bylines</li>
-								<li>Commented-Out-Code</li>
-								<li>Nonlocal Information</li>
-								<li>Too much Information</li>
-								<li>Inobvious Connection</li>
-								<li>Function Headers</li>
-								<li>Javadoc in nonpublic Code</li>
-							</ul>
-					</td>
-					</tr>
-					</tbody></table>
-				</section>
-
-				<section>
-					<section>
-						<h2>Mumbling I</h2>
-						<img src="assets/bad_comments/mumbling01.png">
-					</section>
-
-					<section>
-						<h2>Mumbling II</h2>
-						<img src="assets/bad_comments/mumbling02.png">
-					</section>
-
-					<section>
-						<h2>Mumbling III</h2>
-						<img src="assets/bad_comments/mumbling03.png">
-					</section>
-
-					<section>
-						<h2>Mumbling IV</h2>
-						<img src="assets/bad_comments/mumbling04.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Redundant Comments I</h2>
-						<img src="assets/bad_comments/redundant01.png">
-					</section>
-
-					<section>
-						<h2>Redundant Comments II</h2>
-						<img src="assets/bad_comments/redundant02.png">
-					</section>
-
-					<section>
-						<h2>Redundant Comments III</h2>
-						<img src="assets/bad_comments/redundant03.png">
-					</section>
-
-					<section>
-						<h2>Redundant Comments IV</h2>
-						<img src="assets/bad_comments/redundant04.png">
-					</section>
-				</section>
-
-				<section>
-					<h2>Misleading Comments</h2>
-					<img src="assets/bad_comments/misleading01.png">
-				</section>
-
-				<section>
-					<h2>Mandated Comments</h2>
-					<img src="assets/bad_comments/mandated01.png">
-				</section>
-
-				<section>
-					<h2>Journal Comments</h2>
-					<img src="assets/bad_comments/journal01.png">
-				</section>
-
-				<section>
-					<h2>Noise Comments</h2>
-					<img src="assets/bad_comments/noise01.png">
-				</section>
-
-				<section>
-					<h2>Scary Noise</h2>
-					<img src="assets/bad_comments/scarynoise01.png">
-				</section>
-
-				<section>
-					<h2>Position Markers</h2>
-					<img src="assets/bad_comments/positionmarker01.png">
-				</section>
-
-				<section>
-					<section>
-						<h2>Closing Brace Comments I</h2>
-						<img src="assets/bad_comments/closingbrace01.png">
-					</section>
-
-					<section>
-						<h2>Closing Brace Comments II</h2>
-						<img src="assets/bad_comments/closingbrace02.png">
-					</section>
-
-					<section>
-						<h2>Closing Brace Comments III</h2>
-						<img src="assets/bad_comments/closingbrace03.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Attributions and Bylines I</h2>
-						<img src="assets/bad_comments/bylines01.png">
-					</section>
-
-					<section>
-						<h2>Attributions and Bylines II</h2>
-						<img src="assets/bad_comments/bylines02.png">
-					</section>
-				</section>
-
-				<section>
-
-					<section>
-						<h2><a href="https://twitter.com/geekandpoke">Geek & Poke</a> explains</h2>
-						<h3>Commented-Out-Code</h3>
-						<img data-src="assets/6a00d8341d3df553ef0120a6d65b8a970b.jpg">
-					</section>
-
-					<section>
-						<h2>Commented-Out-Code I</h2>
-						<img src="assets/bad_comments/commentedoutcode01.png">
-					</section>
-
-					<section>
-						<h2>Commented-Out-Code II</h2>
-						<img src="assets/bad_comments/commentedoutcode02.png">
-					</section>
-
-					<section>
-						<h2>Commented-Out-Code III</h2>
-						<img src="assets/bad_comments/commentedoutcode03.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Nonlocal Information I</h2>
-						<img src="assets/bad_comments/nonlocalinformation01.png">
-					</section>
-
-					<section>
-						<h2>Nonlocal Information II</h2>
-						<img src="assets/bad_comments/nonlocalinformation02.png">
-					</section>
-				</section>
-
-				<section>
-					<h2>Too much Information</h2>
-					<img src="assets/bad_comments/toomuchinformation01.png">
-				</section>
-
-				<section>
-					<h2>Inobvious Connection</h2>
-					<img src="assets/bad_comments/inobviousconnection01.png">
-				</section>
-
-				<section>
-					<h2>Function Headers</h2>
-					<img src="assets/bad_comments/functionheaders01.png">
-				</section>
-
-				<section>
-					<h2>Javadoc in nonpublic Code</h2>
-					<img src="assets/bad_comments/nonpublicjavadoc01.png">
-				</section>
-
-				<section>
-					<h2>Good Comments</h2>
-					<ul>
-						<li>Legal Comments</li>
-						<li>Public API Javadoc</li>
-						<li>Informative Comments</li>
-						<li>Explanation of Intent</li>
-						<li>Clarification</li>
-						<li>Warning of Consequences</li>
-						<li>TODO Comments</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Legal Comments</h2>
-					<img src="assets/good_comments/legal01.png">
-				</section>
-
-				<section>
-					<h2>Public API Javadoc</h2>
-					<img src="assets/good_comments/publicapi01.png">
-				</section>
-
-				<section>
-					<section>
-						<h2>Informative Comments I</h2>
-						<img src="assets/good_comments/informative01.png">
-					</section>
-
-					<section>
-						<h2>Informative Comments II</h2>
-						<img src="assets/good_comments/informative02.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Explanation of Intent I</h2>
-						<img src="assets/good_comments/explanationofintent01.png">
-					</section>
-
-					<section>
-						<h2>Explanation of Intent II</h2>
-						<img src="assets/good_comments/explanationofintent02.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Clarification I</h2>
-						<img src="assets/good_comments/clarification01.png">
-					</section>
-
-					<section>
-						<h2>Clarification II</h2>
-						<img src="assets/good_comments/clarification02.png">
-					</section>
-
-					<section>
-						<h2>Clarification III</h2>
-						<img src="assets/good_comments/clarification03.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Warning of Consequences I</h2>
-						<img src="assets/good_comments/warningofconsequences01.png">
-					</section>
-
-					<section>
-						<h2>Warning of Consequences II</h2>
-						<img src="assets/good_comments/warningofconsequences02.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>TODO Comments I</h2>
-						<img src="assets/good_comments/todo01.png">
-					</section>
-
-					<section>
-						<h2>TODO Comments II</h2>
-						<img src="assets/good_comments/todo02.png">
-					</section>
-
-					<section>
-						<h2>TODO Comments III</h2>
-						<img src="assets/good_comments/todo03.png">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h2>Anti-Pattern: UnCamelCasing&#8482;</h2>
-						<p>
-							The art of splitting class/method names into Javadoc while providing zero additional information.
-						</p>
-						<img data-src="assets/uncamelcasing/yakami_shinsei_ryu_belts.png">
-						<small>
-							There are different skill levels of this art comparable to belts in martial arts.
-						</small>
-					</section>
-
-					<section>
-						<h2>UnCamelCasing&#8482; Example</h2>
-						<h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span style="background: rgba(234, 234, 234, 1)">&nbsp;White Belt&nbsp;</span></h3>
-						<img data-src="assets/uncamelcasing/example01.png">
-					</section>
-
-					<section>
-						<h2>UnCamelCasing&#8482; Example</h2>
-						<h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span style="background: rgb(102, 234, 104)">&nbsp;Green Belt&nbsp;</span></h3>
-						<img data-src="assets/uncamelcasing/example02.png">
-					</section>
-
-					<section>
-						<h2>UnCamelCasing&#8482; Example</h2>
-						<h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span style="background: rgb(128, 72, 39)">&nbsp;Brown Belt&nbsp;</span></h3>
-						<img data-src="assets/uncamelcasing/example03.png">
-					</section>
-
-					<section>
-						<h2>UnCamelCasing&#8482; Example</h2>
-						<h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span style="background: rgb(0, 0, 0)">&nbsp;Black Belt&nbsp;</span></h3>
-						<table><tbody>
-						<tr class="fragment"><td>It is impossible to reach a black belt in UnCamelCasing&#8482;...</td></tr>
-						<tr class="fragment"><td>...at least with manually writing code comments, that is!</td></tr>
-						<tr class="fragment"><td>The real &quot;pro&quot; UnCamelCasers&#8482; go even further...</td></tr>
-						<tr class="fragment"><td>...and <strong>automate the UnCamelCasing&#8482; process</strong> entirely!</td></tr>
-						</tbody></table>
-					</section>
-
-				</section>
-
-				<section>
-					<section>
-						<h2>Anti-Tool: <a href="http://jautodoc.sourceforge.net/">JAutodoc</a></h2>
-						<blockquote cite="http://jautodoc.sourceforge.net/">
-							"JAutodoc is an Eclipse Plugin for automatically adding Javadoc and file headers to your source code.
-							It optionally generates initial comments from element name by using Velocity templates for Javadoc
-							and file headers."
-						</blockquote>
-					</section>
-
-					<section>
-						<h2>// No Comment!</h2>
-						<img data-src="assets/uncamelcasing/jautodoc.gif">
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h1>Thanks for your attention!</h1>
-						<h3>by Björn Kimminich / kimminich.de</h3>
-						<p>
-							These slides are publicly available on <a href="https://github.com/bkimminich/no-comment">GitHub</a> and <a href="">Slideshare</a>.
-						</p>
-					</section>
-					<section>
-						<h2>Credits</h2>
-						<ul>
-							<li><a href="http://lab.hakim.se/reveal-js">reveal.js</a> - The HTML Presentation Framework</li>
-							<li><a href="http://geek-and-poke.com">Geek &amp; Poke</a> - The Cartoons on <a href="">#9</a> and <a href="">#21</a></li>
-							<li>Included real-life comment examples courtesy of
-								<ul>
-									<li>various Kuehne + Nagel web projects</li>
-									<li>homeworks of Nordakademie students</li>
-									<li>OWASP ZAProxy open source project</li>
-									<li>and yours truly.</li>
-								</ul>
-							</li>
-						</ul>
-						<hr>
-						<p>
-							<small>
-								Copyright (c) 2015 Björn Kimminich<br>
-								<small>No software engineers were harmed during or after the creation of this presentation!</small>
-							</small>
-						</p>
-					</section>
-				</section>
-
-
-			</div>
-
-		</div>
-
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
-
-				// Optional reveal.js plugins
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-
-		</script>
-
-	</body>
+<head>
+    <meta charset="utf-8">
+
+    <title>No Comment!</title>
+
+    <meta name="description" content="No Comment!">
+    <meta name="author" content="Bjoern Kimminich">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+        <section>
+            <h1>// No Comment!</h1>
+            <code>
+                <small>/* about the worthlessness of comments in clean code */</small>
+            </code>
+
+            <p>
+                <small>Created by <a href="http://kimminich.de">Björn Kimminich</a> / <a
+                        href="http://twitter.com/bkimminich">@bkimminich</a></small>
+            </p>
+        </section>
+
+        <section>
+            <h2>Uncle Bob dislikes comments</h2>
+            <blockquote cite="Clean Code, Robert C. Martin">
+                "Comments are, at best, a necessary evil."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>Students like comments</h2>
+            <table>
+                <tbody>
+                <tr class="fragment">
+                    <td>Professors promote comments as documentation.</td>
+                </tr>
+                <tr class="fragment">
+                    <td>Professors often like extensive documentation.</td>
+                </tr>
+                <tr class="fragment">
+                    <td>Extensive documentation leads to better grades.</td>
+                </tr>
+                <tr class="fragment">
+                    <td>Students love to get better grades for mindless work.</td>
+                </tr>
+                <tr class="fragment">
+                    <td><strong>q.e.d.</strong></td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2><a href="https://www.openhub.net">OpenHub</a> also likes comments</h2>
+            <blockquote cite="https://www.openhub.net/p/juice-shop/factoids#FactoidCommentsAverage">
+                "A high number of comments might indicate that the code is well-documented and organized, and could be a
+                sign of a helpful and disciplined development team."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>I'm in the <a href="https://www.openhub.net">OpenHub</a> worst 10%?</h2>
+            <blockquote cite="https://www.openhub.net/p/kata-tcg/factoids#FactoidCommentsVeryLow">
+                "Across all Java projects on Open Hub, 31% all source code lines are comments. For <a
+                    href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a>, this figure is
+                1%.
+                This lack of comments puts <a href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game
+                (TCG)</a> among the lowest 10% of all Java projects on Open Hub."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2><a href="https://sonarqube.org">SonarQube</a> got it right!</h2>
+            <blockquote cite="http://docs.sonarqube.org/display/HOME/Not+Enough+or+Too+Many+Comments">
+                "If the source code needs too many comments, it either means that it does not respect coding standards
+                (naming conventions, design, etc.) or it is too complex."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>This is in line with Uncle Bob</h2>
+            <blockquote cite="Clean Code, Robert C. Martin">
+                "The proper use of comments is to compensate our failure to express ourself in code."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2><a href="https://www.openhub.net">SonarQube</a> goes even further</h2>
+            <blockquote cite="http://docs.sonarqube.org/display/HOME/Not+Enough+or+Too+Many+Comments">
+                "Time consuming maintenance [...] may lead to comments that are no longer up to date. Then comments go
+                against their primary goal: they mislead the developer who will spend more time understanding the source
+                code."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>Again in line with Uncle Bob</h2>
+            <blockquote cite="Clean Code, Robert C. Martin">
+                "Inaccurate comments are far worse than no comments at all."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2><a href="https://twitter.com/geekandpoke">Geek & Poke</a> sums it up</h2>
+            <img data-src="assets/6a00d8341d3df553ef0163007a80ae970d.jpg">
+        </section>
+
+        <section>
+            <h2>Bad Comments</h2>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Mumbling</li>
+                            <li>Redundant Comments</li>
+                            <li>Misleading Comments</li>
+                            <li>Mandated Comments</li>
+                            <li>Journal Comments</li>
+                            <li>Noise Comments</li>
+                            <li>Scary Noise</li>
+                            <li>Position Markers</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Closing Brace Comments</li>
+                            <li>Attributions and Bylines</li>
+                            <li>Commented-Out-Code</li>
+                            <li>Nonlocal Information</li>
+                            <li>Too much Information</li>
+                            <li>Inobvious Connection</li>
+                            <li>Function Headers</li>
+                            <li>Javadoc in nonpublic Code</li>
+                        </ul>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <section>
+                <h2>Mumbling I</h2>
+                <img src="assets/bad_comments/mumbling01.png">
+            </section>
+
+            <section>
+                <h2>Mumbling II</h2>
+                <img src="assets/bad_comments/mumbling02.png">
+            </section>
+
+            <section>
+                <h2>Mumbling III</h2>
+                <img src="assets/bad_comments/mumbling03.png">
+            </section>
+
+            <section>
+                <h2>Mumbling IV</h2>
+                <img src="assets/bad_comments/mumbling04.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Redundant Comments I</h2>
+                <img src="assets/bad_comments/redundant01.png">
+            </section>
+
+            <section>
+                <h2>Redundant Comments II</h2>
+                <img src="assets/bad_comments/redundant02.png">
+            </section>
+
+            <section>
+                <h2>Redundant Comments III</h2>
+                <img src="assets/bad_comments/redundant03.png">
+            </section>
+
+            <section>
+                <h2>Redundant Comments IV</h2>
+                <img src="assets/bad_comments/redundant04.png">
+            </section>
+        </section>
+
+        <section>
+            <h2>Misleading Comments</h2>
+            <img src="assets/bad_comments/misleading01.png">
+        </section>
+
+        <section>
+            <h2>Mandated Comments</h2>
+            <img src="assets/bad_comments/mandated01.png">
+        </section>
+
+        <section>
+            <h2>Journal Comments</h2>
+            <img src="assets/bad_comments/journal01.png">
+        </section>
+
+        <section>
+            <h2>Noise Comments</h2>
+            <img src="assets/bad_comments/noise01.png">
+        </section>
+
+        <section>
+            <h2>Scary Noise</h2>
+            <img src="assets/bad_comments/scarynoise01.png">
+        </section>
+
+        <section>
+            <h2>Position Markers</h2>
+            <img src="assets/bad_comments/positionmarker01.png">
+        </section>
+
+        <section>
+            <section>
+                <h2>Closing Brace Comments I</h2>
+                <img src="assets/bad_comments/closingbrace01.png">
+            </section>
+
+            <section>
+                <h2>Closing Brace Comments II</h2>
+                <img src="assets/bad_comments/closingbrace02.png">
+            </section>
+
+            <section>
+                <h2>Closing Brace Comments III</h2>
+                <img src="assets/bad_comments/closingbrace03.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Attributions and Bylines I</h2>
+                <img src="assets/bad_comments/bylines01.png">
+            </section>
+
+            <section>
+                <h2>Attributions and Bylines II</h2>
+                <img src="assets/bad_comments/bylines02.png">
+            </section>
+        </section>
+
+        <section>
+
+            <section>
+                <h2><a href="https://twitter.com/geekandpoke">Geek & Poke</a> explains</h2>
+
+                <h3>Commented-Out-Code</h3>
+                <img data-src="assets/6a00d8341d3df553ef0120a6d65b8a970b.jpg">
+            </section>
+
+            <section>
+                <h2>Commented-Out-Code I</h2>
+                <img src="assets/bad_comments/commentedoutcode01.png">
+            </section>
+
+            <section>
+                <h2>Commented-Out-Code II</h2>
+                <img src="assets/bad_comments/commentedoutcode02.png">
+            </section>
+
+            <section>
+                <h2>Commented-Out-Code III</h2>
+                <img src="assets/bad_comments/commentedoutcode03.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Nonlocal Information I</h2>
+                <img src="assets/bad_comments/nonlocalinformation01.png">
+            </section>
+
+            <section>
+                <h2>Nonlocal Information II</h2>
+                <img src="assets/bad_comments/nonlocalinformation02.png">
+            </section>
+        </section>
+
+        <section>
+            <h2>Too much Information</h2>
+            <img src="assets/bad_comments/toomuchinformation01.png">
+        </section>
+
+        <section>
+            <h2>Inobvious Connection</h2>
+            <img src="assets/bad_comments/inobviousconnection01.png">
+        </section>
+
+        <section>
+            <h2>Function Headers</h2>
+            <img src="assets/bad_comments/functionheaders01.png">
+        </section>
+
+        <section>
+            <h2>Javadoc in nonpublic Code</h2>
+            <img src="assets/bad_comments/nonpublicjavadoc01.png">
+        </section>
+
+        <section>
+            <h2>Good Comments</h2>
+            <ul>
+                <li>Legal Comments</li>
+                <li>Public API Javadoc</li>
+                <li>Informative Comments</li>
+                <li>Explanation of Intent</li>
+                <li>Clarification</li>
+                <li>Warning of Consequences</li>
+                <li>TODO Comments</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Legal Comments</h2>
+            <img src="assets/good_comments/legal01.png">
+        </section>
+
+        <section>
+            <h2>Public API Javadoc</h2>
+            <img src="assets/good_comments/publicapi01.png">
+        </section>
+
+        <section>
+            <section>
+                <h2>Informative Comments I</h2>
+                <img src="assets/good_comments/informative01.png">
+            </section>
+
+            <section>
+                <h2>Informative Comments II</h2>
+                <img src="assets/good_comments/informative02.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Explanation of Intent I</h2>
+                <img src="assets/good_comments/explanationofintent01.png">
+            </section>
+
+            <section>
+                <h2>Explanation of Intent II</h2>
+                <img src="assets/good_comments/explanationofintent02.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Clarification I</h2>
+                <img src="assets/good_comments/clarification01.png">
+            </section>
+
+            <section>
+                <h2>Clarification II</h2>
+                <img src="assets/good_comments/clarification02.png">
+            </section>
+
+            <section>
+                <h2>Clarification III</h2>
+                <img src="assets/good_comments/clarification03.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Warning of Consequences I</h2>
+                <img src="assets/good_comments/warningofconsequences01.png">
+            </section>
+
+            <section>
+                <h2>Warning of Consequences II</h2>
+                <img src="assets/good_comments/warningofconsequences02.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>TODO Comments I</h2>
+                <img src="assets/good_comments/todo01.png">
+            </section>
+
+            <section>
+                <h2>TODO Comments II</h2>
+                <img src="assets/good_comments/todo02.png">
+            </section>
+
+            <section>
+                <h2>TODO Comments III</h2>
+                <img src="assets/good_comments/todo03.png">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Anti-Pattern: UnCamelCasing&#8482;</h2>
+
+                <p>
+                    The art of splitting class/method names into Javadoc while providing zero additional information.
+                </p>
+                <img data-src="assets/uncamelcasing/yakami_shinsei_ryu_belts.png">
+                <small>
+                    There are different skill levels of this art comparable to belts in martial arts.
+                </small>
+            </section>
+
+            <section>
+                <h2>UnCamelCasing&#8482; Example</h2>
+
+                <h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span
+                        style="background: rgba(234, 234, 234, 1)">&nbsp;White Belt&nbsp;</span></h3>
+                <img data-src="assets/uncamelcasing/example01.png">
+            </section>
+
+            <section>
+                <h2>UnCamelCasing&#8482; Example</h2>
+
+                <h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span
+                        style="background: rgb(102, 234, 104)">&nbsp;Green Belt&nbsp;</span></h3>
+                <img data-src="assets/uncamelcasing/example02.png">
+            </section>
+
+            <section>
+                <h2>UnCamelCasing&#8482; Example</h2>
+
+                <h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span
+                        style="background: rgb(128, 72, 39)">&nbsp;Brown Belt&nbsp;</span></h3>
+                <img data-src="assets/uncamelcasing/example03.png">
+            </section>
+
+            <section>
+                <h2>UnCamelCasing&#8482; Example</h2>
+
+                <h3><span style="background: rgba(103, 103, 103, 1)">&nbsp;Skill Level&nbsp;</span><span
+                        style="background: rgb(0, 0, 0)">&nbsp;Black Belt&nbsp;</span></h3>
+                <table>
+                    <tbody>
+                    <tr class="fragment">
+                        <td>It is impossible to reach a black belt in UnCamelCasing&#8482;...</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td>...at least with manually writing code comments, that is!</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td>The real &quot;pro&quot; UnCamelCasers&#8482; go even further...</td>
+                    </tr>
+                    <tr class="fragment">
+                        <td>...and <strong>automate the UnCamelCasing&#8482; process</strong> entirely!</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </section>
+
+        <section>
+            <section>
+                <h2>Anti-Tool: <a href="http://jautodoc.sourceforge.net/">JAutodoc</a></h2>
+                <blockquote cite="http://jautodoc.sourceforge.net/">
+                    "JAutodoc is an Eclipse Plugin for automatically adding Javadoc and file headers to your source
+                    code.
+                    It optionally generates initial comments from element name by using Velocity templates for Javadoc
+                    and file headers."
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>// No Comment!</h2>
+                <img data-src="assets/uncamelcasing/jautodoc.gif">
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h1>Thanks for your attention!</h1>
+
+                <h3>by Björn Kimminich / kimminich.de</h3>
+
+                <p>
+                    These slides are publicly available on <a href="https://github.com/bkimminich/no-comment">GitHub</a>
+                    and <a href="">Slideshare</a>.
+                </p>
+            </section>
+            <section>
+                <h2>Credits</h2>
+                <ul>
+                    <li><a href="http://lab.hakim.se/reveal-js">reveal.js</a> - The HTML Presentation Framework</li>
+                    <li><a href="http://geek-and-poke.com">Geek &amp; Poke</a> - The Cartoons on <a href="">#9</a> and
+                        <a href="">#21</a></li>
+                    <li>Included real-life comment examples courtesy of
+                        <ul>
+                            <li>various Kuehne + Nagel web projects</li>
+                            <li>homeworks of Nordakademie students</li>
+                            <li>OWASP ZAProxy open source project</li>
+                            <li>and yours truly.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <hr>
+                <p>
+                    <small>
+                        Copyright (c) 2015 Björn Kimminich<br>
+                        <small>No software engineers were harmed during or after the creation of this presentation!
+                        </small>
+                    </small>
+                </p>
+            </section>
+        </section>
+
+
+    </div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: 'lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: 'plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: 'plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: 'plugin/zoom-js/zoom.js', async: true},
+            {src: 'plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+</body>
 </html>
