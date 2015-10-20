@@ -54,6 +54,17 @@
         </section>
 
         <section>
+            <h2>Narrative Arc of this Talk</h2>
+            <ol>
+                <li class="fragment">Scientific <strong>Exposition</strong></li>
+                <li class="fragment"><strong>Rising Action</strong> Examples</li>
+                <li class="fragment">Trademark-worthy <strong>Climax</strong></li>
+                <li class="fragment">Bonus Climax instead of <strong>Falling Action</strong></li>
+                <li class="fragment">RaaTYS <span class="fragment">(<strong>Resolution</strong>-as-a-Thank-You-Slide)</span></li>
+            </ol>
+        </section>
+
+        <section>
             <h2>Uncle Bob dislikes comments</h2>
             <blockquote cite="Clean Code, Robert C. Martin">
                 "Comments are, at best, a necessary evil."
@@ -61,20 +72,21 @@
         </section>
 
         <section>
-            <h2>Students like comments</h2>
+            <h3>Students love extensive comments</h3>
+            <h4>and I can prove it!</h4>
             <table>
                 <tbody>
                 <tr class="fragment">
-                    <td>Professors promote comments as documentation.</td>
+                    <td>Professors often like extensive documentation.</td>
                 </tr>
                 <tr class="fragment">
-                    <td>Professors often like extensive documentation.</td>
+                    <td>Professors often promote comments as documentation.</td>
                 </tr>
                 <tr class="fragment">
                     <td>Extensive documentation leads to better grades.</td>
                 </tr>
                 <tr class="fragment">
-                    <td>Students love to get better grades for mindless work.</td>
+                    <td>Students love to get better grades.</td>
                 </tr>
                 <tr class="fragment">
                     <td><strong>q.e.d.</strong></td>
@@ -84,16 +96,19 @@
         </section>
 
         <section>
-            <h2><a href="https://www.openhub.net">OpenHub</a> also likes comments</h2>
+            <h2><a href="https://www.openhub.net">Open Hub</a>* also likes comments</h2>
             <blockquote cite="https://www.openhub.net/p/juice-shop/factoids#FactoidCommentsAverage">
                 "A high number of comments might indicate that the code is well-documented and organized, and could be a
                 sign of a helpful and disciplined development team."
             </blockquote>
+            <small><small>
+                *Open Hub (formerly Ohloh.net) is an online community and public directory of free and open source software.
+            </small></small>
         </section>
 
         <section data-background-image="assets/backgrounds/kata-tcg-background.jpg">
             <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px;">
-                <h2>I'm in the <a href="https://www.openhub.net">OpenHub</a> worst 10%?</h2>
+                <h2>I'm in the <a href="https://www.openhub.net">Open Hub</a> worst 10%</h2>
                 <blockquote cite="https://www.openhub.net/p/kata-tcg/factoids#FactoidCommentsVeryLow">
                 "Across all Java projects on Open Hub, 31% all source code lines are comments. For <a
                         href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a>, this figure is
@@ -105,11 +120,14 @@
         </section>
 
         <section>
-            <h2><a href="https://sonarqube.org">SonarQube</a> got it right!</h2>
+            <h2><a href="https://sonarqube.org">SonarQube</a>* got it right!</h2>
             <blockquote cite="http://docs.sonarqube.org/display/HOME/Not+Enough+or+Too+Many+Comments">
                 "If the source code needs too many comments, it either means that it does not respect coding standards
                 (naming conventions, design, etc.) or it is too complex."
             </blockquote>
+            <small><small>
+                *SonarQube (formerly Sonar) is an open platform to manage code quality.
+            </small></small>
         </section>
 
         <section>
@@ -141,8 +159,8 @@
         </section>
 
         <section>
-            <h3>Enough of the "scientific" intro!</h3>
-            <p>Let's see some examples, shall we?</p>
+            <h3>Enough of the "scientific" exposition!</h3>
+            <p>Let's rise the action with some examples, shall we?</p>
         </section>
 
         <section>
@@ -238,7 +256,7 @@
                     <p>
                         When there is a mystery or crime to be solved, Batman will utilize his brain and all kinds of fancy gadgets to get it done!
                         He will analyze, investigate and deduce until he has the answer. For him as a <em>costumed Super Hero Detective</em> it's part of the job!
-                        <em>Software engineers</em> shouldn't have to go into Batman Mode&#8482; to investigate comments!
+                        <em>Software engineers</em> should <strong>never</strong> have to go into Batman Mode&#8482; to investigate comments!
                     </p>
                 </div>
             </section>
@@ -292,7 +310,7 @@
                 <img src="assets/bad_comments/positionmarker01.png">
             </section>
             <section>
-                <h2>Exception for Position Markers</h2>
+                <h2>Exception: Good Position Markers</h2>
                 <p>
                     If you are using some graphical UI editor or other code generator, the position markers they
                     introduce are fine! Removing them would most likely break stuff!
@@ -406,7 +424,10 @@
 
         <section data-background-image="assets/backgrounds/p01gk35d.jpg">
             <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px;">
-                <h2>And now for something completely different...</h2>
+                <h2>And now for something completely different</h2>
+                <small>
+                    (Intentionally unexpected intermission in the narrative arc)
+                </small>
             </div>
         </section>
 
@@ -506,16 +527,16 @@
         </section>
 
         <section>
-            <h3>Enough of the "good" stuff!</h3>
+            <h3>But you promised us a climax!!!</h3>
             <p>
-                Closing a talk about how bad most comments are with good examples seems like a pretty bad idea.
-                So, let's finalize this talk with something <strong>really bad</strong> to get back into the mood...
+                Closing a talk about how bad most comments are with good examples seems pretty anticlimactic!
+                I guess we need something <strong>climactically bad</strong> to get back on track now...
             </p>
         </section>
 
         <section>
             <section>
-                <h2>Anti-Pattern: UnCamelCasing&#8482;</h2>
+                <h2>Climax: UnCamelCasing&#8482;</h2>
 
                 <p>
                     The art of splitting class/method names into Javadoc while providing zero additional information.
@@ -577,7 +598,7 @@
 
         <section>
             <section>
-                <h2>Anti-Tool: <a href="http://jautodoc.sourceforge.net/">JAutodoc</a></h2>
+                <h2>Bonus Climax: <a href="http://jautodoc.sourceforge.net/">JAutodoc</a></h2>
                 <blockquote cite="http://jautodoc.sourceforge.net/">
                     "JAutodoc is an Eclipse Plugin for automatically adding Javadoc and file headers to your source
                     code.
@@ -599,7 +620,7 @@
                 <small>
                     <ul>
                         <li class="fragment">...and for <strong>not writing comments</strong> unless you absolutely have to!</li>
-                        <li class="fragment">...and for <strong>deleting all bad comments</strong> you come across at work!</li>
+                        <li class="fragment">...and for <strong>deleting all bad comments</strong> you come across from now on!</li>
                         <li class="fragment">...and for <strong>not using UnCamelCasing&#8482;</strong> to create documentation!</li>
                         <li class="fragment">...and for <strong>never installing/immediately uninstalling JAutodoc</strong>!</li>
                     </ul>
@@ -672,7 +693,7 @@
             }
             },
             {src: 'plugin/zoom-js/zoom.js', async: true},
-            {src: 'plugin/notes/notes.js', async: true}
+            {src: 'plugin/notes/notes.js', async: true},
         ]
     });
 
