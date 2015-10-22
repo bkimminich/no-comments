@@ -10,9 +10,9 @@ before_script:
   - sudo apt-get install wput
 after_script:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /assets ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /css ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /js ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /lib ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /plugin ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput assets ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput css ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput js ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput lib ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput plugin ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
 sudo: required
