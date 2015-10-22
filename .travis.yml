@@ -8,5 +8,10 @@ env:
 before_script:
   - npm install -g grunt-cli
 after_script:
-  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && curl --ftp-create-dirs -T index.html ftp://ftp.strato.de/no-comment/ -u $FTP_USER:$FTP_PASSWORD
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /assets ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /css ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /js ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /lib ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
+  - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput /plugin ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
 sudo: false
