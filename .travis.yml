@@ -7,7 +7,7 @@ env:
   - secure: U6BsqT1dyvyQZLuF/NAnvAnwkk4wV5HFEO+2C9XZ6x/FOrlLZZdlHRlLLDSoXr1FB+Q3cyBSuGQxhk94i4l+1qg2nQ+kGyVlHCHvOAmj88HmDbmY4GCzera0m/QzFzsKVt9iUIT1rXKmumCr2tdf5MeE00omDdCyRnuOuYy8dily1mw9oWeyj+aWwjCiSB7G/I4OfyslBCRGQBE1BQeo7Wwr8VS3zhqcpEoR8xtBf7hJDoqLyVQeZzskRgmRLF1hJqcvNNISzEBHDueBj05clv/+c21l+/em+uqKaGaBqQpdKDWOQO+UURUq5yc86d9TU1KjIqsBpxWfY8GOu7x5NFokWAVMXrsoiS2RdG98N28NN6ZfyV6oeuRmJKTyvx/UdKw7yrydtEoBLyIJ2OK7zy450jjnw+DEBPwtupu9PXqNLpnqpGUkkWZ6iE4NSccFv6qwQBkqBf7e4+nBj2HogiIvJP171b8JYOeXleqariAYKazrkYGdqC8Mwrpu8j1CJ4U/DA9Bs+5P83/ZWmsQWzajm7InprJw9SPf+06lFVLUCSHNhUi9bIvOac7btMUZQjo3I46Hzqc46J+fMYU7o4oYEy/PsfhTpJSJWr0O3agTty2gzCedHWsAtbf0J2N4TNPUYBdcZHAUMT2Ihx3VOTqwTP2Gef5gVGj+yQrwpas=
 before_script:
   - npm install -g grunt-cli
-  - sudo apt-get install wput
+  - apt-get install wput
 after_script:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput index.html ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput assets ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
@@ -15,4 +15,4 @@ after_script:
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput js ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput lib ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
   - test $TRAVIS_PULL_REQUEST == "false" && test $TRAVIS_BRANCH == "master" && wput plugin ftp://$FTP_USER:$FTP_PASSWORD@ftp.strato.de/no-comment/ -u
-sudo: required
+sudo: false
