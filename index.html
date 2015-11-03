@@ -61,8 +61,7 @@
                 <li class="fragment"><strong>Rising Action</strong> Examples</li>
                 <li class="fragment">Trademark-protected <strong>Climax</strong></li>
                 <li class="fragment">Bonus Climax instead of <strong>Falling Action</strong></li>
-                <li class="fragment">RaaTYS <span
-                        class="fragment">(<strong>Resolution</strong>-as-a-Thank-You-Slide)</span></li>
+                <li class="fragment">RaaTYS <span class="fragment">(<strong>Resolution</strong>-as-a-Thank-You-Slide)</span></li>
             </ol>
         </section>
 
@@ -105,24 +104,19 @@
                 "A high number of comments might indicate that the code is well-documented and organized, and could be a
                 sign of a helpful and disciplined development team."
             </blockquote>
-            <small>
-                <small>
-                    *Open Hub (formerly Ohloh.net) is an online community and public directory of free and open source
-                    software.
-                </small>
-            </small>
+            <small><small>
+                *Open Hub (formerly Ohloh.net) is an online community and public directory of free and open source software.
+            </small></small>
         </section>
 
         <section data-background-image="assets/backgrounds/kata-tcg-background.jpg">
             <div style="background-color: rgba(255, 255, 255, 0.6); padding: 10px;">
                 <h2>I'm in the <a href="https://www.openhub.net">Open Hub</a> worst 10%</h2>
                 <blockquote cite="https://www.openhub.net/p/kata-tcg/factoids#FactoidCommentsVeryLow">
-                    "Across all Java projects on Open Hub, 31% all source code lines are comments. For <a
-                        href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a>, this
-                    figure is
+                "Across all Java projects on Open Hub, 31% all source code lines are comments. For <a
+                        href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game (TCG)</a>, this figure is
                     1%.
-                    This lack of comments puts <a href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card
-                    Game
+                    This lack of comments puts <a href="https://github.com/bkimminich/kata-tcg">Code Kata: Trading Card Game
                     (TCG)</a> among the lowest 10% of all Java projects on Open Hub."
                 </blockquote>
             </div>
@@ -134,11 +128,9 @@
                 "If the source code needs too many comments, it either means that it does not respect coding standards
                 (naming conventions, design, etc.) or it is too complex."
             </blockquote>
-            <small>
-                <small>
-                    *SonarQube (formerly Sonar) is an open platform to manage code quality.
-                </small>
-            </small>
+            <small><small>
+                *SonarQube (formerly Sonar) is an open platform to manage code quality.
+            </small></small>
         </section>
 
         <section data-background-image="assets/backgrounds/uncle_bob_mirrors.jpg">
@@ -175,13 +167,11 @@
 
         <section>
             <h3>Enough of the "scientific" exposition!</h3>
-
             <p>Let's rise the action with some examples, shall we?</p>
         </section>
 
         <section>
-            <h2><span style="background: rgba(103, 103, 103, 1)">&nbsp;Bad&nbsp;</span><span
-                    style="background: rgb(255, 9, 34)">&nbsp;Comments&nbsp;</span></h2>
+            <h2><span style="background: rgba(103, 103, 103, 1)">&nbsp;Bad&nbsp;</span><span style="background: rgb(255, 9, 34)">&nbsp;Comments&nbsp;</span></h2>
             <table>
                 <tbody>
                 <tr>
@@ -262,24 +252,18 @@
             <section>
                 <h2>Misleading Comments</h2>
                 <img data-src="assets/bad_comments/misleading01.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 80px; right: 30px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 80px; right: 30px;">
                 </div>
             </section>
 
             <section data-background-image="assets/backgrounds/4ecac603fe80d007db6fcca0e7ab0263.jpg">
                 <div style="background-color: rgba(255, 255, 255, 0.6); padding: 10px;">
                     <h2>The Batman Mode&#8482; Metaphor</h2>
-
                     <p>
-                        When there is a mystery or crime to be solved, Batman will utilize his brain and all kinds of
-                        fancy gadgets to get it done!
-                        He will analyze, investigate and deduce until he has the answer. For him as a <em>costumed Super
-                        Hero Detective</em> it's part of the job!
-                        <em>Software engineers</em> should <strong>never</strong> have to go into Batman Mode&#8482; to
-                        investigate comments!
+                        When there is a mystery or crime to be solved, Batman will utilize his brain and all kinds of fancy gadgets to get it done!
+                        He will analyze, investigate and deduce until he has the answer. For him as a <em>costumed Super Hero Detective</em> it's part of the job!
+                        <em>Software engineers</em> should <strong>never</strong> have to go into Batman Mode&#8482; to investigate comments!
                     </p>
                 </div>
             </section>
@@ -287,28 +271,16 @@
             <section>
                 <h3>What possible conclusions are there?</h3>
                 <img data-src="assets/bad_comments/misleading01.png">
-
                 <div>
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 70px; right: 20px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 70px; right: 20px;">
                 </div>
                 <small>
                     <ul>
-                        <li class="fragment">There was a repaint happening some commits ago. The comment just got
-                            obsolete!
-                        </li>
-                        <li class="fragment">There was a repaint happening some commits ago. That it's gone was an
-                            accident!
-                        </li>
-                        <li class="fragment">There was no a repaint happening so far. But it should have been added by
-                            now!
-                        </li>
-                        <li class="fragment">The repaint is still happening as a hidden side effect somewhere in the
-                            code!
-                        </li>
-                        <li class="fragment">The developer actually wanted to type <code style="color: #3b7c5c">//
-                            repeat for all calendar days</code>!
-                        </li>
+                        <li class="fragment">There was a repaint happening some commits ago. The comment just got obsolete!</li>
+                        <li class="fragment">There was a repaint happening some commits ago. That it's gone was an accident!</li>
+                        <li class="fragment">There was no a repaint happening so far. But it should have been added by now!</li>
+                        <li class="fragment">The repaint is still happening as a hidden side effect somewhere in the code!</li>
+                        <li class="fragment">The developer actually wanted to type <code style="color: #3b7c5c">// repeat for all calendar days</code>!</li>
                     </ul>
                 </small>
             </section>
@@ -336,10 +308,8 @@
         <section>
             <h2>Scary Noise</h2>
             <img data-src="assets/bad_comments/scarynoise01.png">
-
             <div class="fragment">
-                <img data-src="assets/batman-movies-logo-vector.png"
-                     style="border: none; box-shadow: none; position: absolute; top: 80px; right: 60px;">
+                <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 80px; right: 60px;">
             </div>
         </section>
 
@@ -350,7 +320,6 @@
             </section>
             <section>
                 <h3>Exception: Good Position Markers</h3>
-
                 <p>
                     If you are using some graphical UI editor or other code generator, the position markers they
                     introduce are fine! Removing them would most likely break stuff!
@@ -403,30 +372,24 @@
             <section>
                 <h2>Commented-Out-Code I</h2>
                 <img data-src="assets/bad_comments/commentedoutcode01.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 100px; right: 40px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 100px; right: 40px;">
                 </div>
             </section>
 
             <section>
                 <h2>Commented-Out-Code II</h2>
                 <img data-src="assets/bad_comments/commentedoutcode02.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 130px; right: 20px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 130px; right: 20px;">
                 </div>
             </section>
 
             <section>
                 <h2>Commented-Out-Code III</h2>
                 <img data-src="assets/bad_comments/commentedoutcode03.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 40px; right: -40px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 40px; right: -40px;">
                 </div>
             </section>
         </section>
@@ -435,20 +398,16 @@
             <section>
                 <h2>Nonlocal Information I</h2>
                 <img data-src="assets/bad_comments/nonlocalinformation01.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 160px; right: -30px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 160px; right: -30px;">
                 </div>
             </section>
 
             <section>
                 <h2>Nonlocal Information II</h2>
                 <img data-src="assets/bad_comments/nonlocalinformation02.png">
-
                 <div class="fragment">
-                    <img data-src="assets/batman-movies-logo-vector.png"
-                         style="border: none; box-shadow: none; position: absolute; top: 150px; right: 0px;">
+                    <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 150px; right: 0px;">
                 </div>
             </section>
         </section>
@@ -463,10 +422,8 @@
         <section>
             <h2>Inobvious Connection</h2>
             <img data-src="assets/bad_comments/inobviousconnection01.png">
-
             <div class="fragment">
-                <img data-src="assets/batman-movies-logo-vector.png"
-                     style="border: none; box-shadow: none; position: absolute; top: 140px; right: 90px;">
+                <img data-src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none; position: absolute; top: 140px; right: 90px;">
             </div>
         </section>
 
@@ -490,8 +447,7 @@
         </section>
 
         <section>
-            <h2><span style="background: rgba(103, 103, 103, 1)">&nbsp;Good&nbsp;</span><span
-                    style="background: rgba(65, 255, 23, 1)">&nbsp;Comments&nbsp;</span></h2>
+            <h2><span style="background: rgba(103, 103, 103, 1)">&nbsp;Good&nbsp;</span><span style="background: rgba(65, 255, 23, 1)">&nbsp;Comments&nbsp;</span></h2>
             <ul>
                 <li>Legal Comments</li>
                 <li>Public API Javadoc</li>
@@ -580,15 +536,13 @@
 
             <section>
                 <h2>Left-over TODO Comments</h2>
-                <img class="fragment grow" src="assets/batman-movies-logo-vector.png"
-                     style="border: none; box-shadow: none;">
+                <img class="fragment grow" src="assets/batman-movies-logo-vector.png" style="border: none; box-shadow: none;">
             </section>
 
         </section>
 
         <section>
             <h3>But you promised us a climax!!!</h3>
-
             <p>
                 Closing a talk about how bad most comments are with good examples seems pretty anticlimactic!
                 I guess we need something <strong>climactically bad</strong> to get back on track now...
@@ -679,18 +633,10 @@
                 <h1>Thanks for your attention...</h1>
                 <small>
                     <ul>
-                        <li class="fragment">...and for <strong>not writing comments</strong> unless you absolutely have
-                            to!
-                        </li>
-                        <li class="fragment">...and for <strong>deleting all bad comments</strong> you come across from
-                            now on!
-                        </li>
-                        <li class="fragment">...and for <strong>not using UnCamelCasing&#8482;</strong> to create
-                            documentation!
-                        </li>
-                        <li class="fragment">...and for <strong>never installing/immediately uninstalling
-                            JAutodoc</strong>!
-                        </li>
+                        <li class="fragment">...and for <strong>not writing comments</strong> unless you absolutely have to!</li>
+                        <li class="fragment">...and for <strong>deleting all bad comments</strong> you come across from now on!</li>
+                        <li class="fragment">...and for <strong>not using UnCamelCasing&#8482;</strong> to create documentation!</li>
+                        <li class="fragment">...and for <strong>never installing/immediately uninstalling JAutodoc</strong>!</li>
                     </ul>
                 </small>
 
@@ -702,17 +648,12 @@
                     These slides are publicly available on <a href="https://github.com/bkimminich/no-comment">GitHub</a>
                     and <a href="">Slideshare</a>.
                     <small>
-                        Copyright (c) 2015 Björn Kimminich - Created with <a href="http://lab.hakim.se/reveal-js">reveal.js</a>
-                        - The HTML Presentation Framework<br><br>
-                        <hr>
-                        <br>
+                        Copyright (c) 2015 Björn Kimminich - Created with <a href="http://lab.hakim.se/reveal-js">reveal.js</a> - The HTML Presentation Framework<br><br>
+                        <hr><br>
                         <small>
-                            Most code examples shown in this presentation are from real-life project code. The <code>@author</code>
-                            tags or other
-                            personal data have been anonymized in order to protect the authors from prosecution by Clean
-                            Code zealots or other Quality Assurance
-                            authorities. No software engineers were harmed during or after the creation of this
-                            presentation! Please consider the environment
+                            Most code examples shown in this presentation are from real-life project code. The <code>@author</code> tags or other
+                            personal data have been anonymized in order to protect the authors from prosecution by Clean Code zealots or other Quality Assurance
+                            authorities. No software engineers were harmed during or after the creation of this presentation! Please consider the environment
                             before printing this slide deck!
                         </small>
                     </small>
@@ -774,33 +715,12 @@
 
 <div class="hidden-mobile">
     <div style="display: block; position: absolute; bottom: 14px; left: 50%; margin-left: -230px; z-index: 20;">
-        <a href="https://twitter.com/bkimminich" class="twitter-follow-button" data-show-count="false">Follow
-            @bkimminich</a>
-        <script>!function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'twitter-wjs');</script>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://no-comment.kimminich.de"
-           data-text="#NoComment! - About the worthlessness of comments in #CleanCode (presented at @Clean_Code_Days 2015)"
-           data-via="bkimminich">Tweet</a>
-        <script>!function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = p + '://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'twitter-wjs');</script>
-        <iframe src="https://ghbtns.com/github-btn.html?user=bkimminich&type=follow&count=true" frameborder="0"
-                scrolling="0" width="170px" height="20px"></iframe>
-        <iframe src="https://ghbtns.com/github-btn.html?user=bkimminich&repo=no-comment&type=star&count=true"
-                frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+        <a href="https://twitter.com/bkimminich" class="twitter-follow-button" data-show-count="false">Follow @bkimminich</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://no-comment.kimminich.de" data-text="#NoComment! - About the worthlessness of comments in #CleanCode (presented at @Clean_Code_Days 2015)" data-via="bkimminich">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <iframe src="https://ghbtns.com/github-btn.html?user=bkimminich&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+        <iframe src="https://ghbtns.com/github-btn.html?user=bkimminich&repo=no-comment&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
     </div>
 </div>
 
